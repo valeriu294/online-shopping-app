@@ -1,42 +1,4 @@
-import tkinter as tk
-from tkinter import messagebox , ttk ,font
-import  sqlite3
-from datetime import datetime
-import sys
 
-
-class OnlineShoppingApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Online Shopping Application")
-        self.root.geometry("1200x600")
-
-        self.conn = sqlite3.connect('orinoco.db')
-        
-        #temporary status to show connection status
-        status_label = tk.Label(self .root,
-                                text = "Database connected successfully",
-                                fg = "red",
-                                font = ("Arial", 10) )
-        status_label.pack(side=tk.BOTTOM, fill=tk.X)
-        
-     #configure styles
-        self.setup_styles() 
-        
-        
-        #variables
-        self.shopper_id = None
-        self.shopper_name = None
-        self.basket_id = None
-        self.conn = None
-
-        #initialise db connetion
-        self.create_connection()
-        
-        
-        #create main interface
-        self.create_login_screen()
-        
 import tkinter as tk
 from tkinter import ttk, messagebox, font
 import sqlite3
